@@ -1,0 +1,12 @@
+{
+  "name": "s56_weirdcars",
+  "version": "1.0.0",
+  "description": "This is a full-stack project which will show strangest and weirdest cars ever created. Users can explore the collection and contribute their own findings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
