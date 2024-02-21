@@ -4,10 +4,22 @@ const app = express()
 const port = process.env.PUBLIC_PORT || 3000
 
 app.get("/ping",(req,res)=>{
-    res.send("pong")
+    try{
+        res.send("pong")
+
+    }
+    catch{
+        res.status(404).send("Error 404 not found")
+    }
 })
 app.get("/",(req,res)=>{
-    res.send("HOME PAGE")
+    try{
+        res.send("Home Page")
+
+    }
+    catch{
+        res.status(404).send("Error 404 not found")
+    }
 })
 app.listen(port,()=>{
     console.log(`Server running on port: ${port}`)
