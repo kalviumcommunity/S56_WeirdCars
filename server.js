@@ -7,8 +7,7 @@ const port = process.env.PUBLIC_PORT || 3000
 
 app.get("/ping",(req,res)=>{
     try{
-        res.send("pong")
-        
+        res.send("pong")    
     }
     catch{
         res.sendStatus(404).send("Error 404 not found")
@@ -17,8 +16,7 @@ app.get("/ping",(req,res)=>{
 app.get("/",(req,res)=>{
     try{
         res.send(mongooseConnection())
-        console.log(mongooseConnection())
-        
+        console.log(mongooseConnection()) 
     }
     catch{
         res.sendStatus(404).send(mongooseConnection())
