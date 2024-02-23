@@ -11,7 +11,7 @@ const connectToDB = async () => {
 	}
 }
 let mongooseConnection =()=>{
-    return mongoose.connection.readyState==1?'Connected to mongoDB':'Error connecting to mongoDB:'
+    return mongoose.connection.readyState===1?'Connected to mongoDB':'Error connecting to mongoDB:'
 }
 module.exports = {
 	connectToDB,
