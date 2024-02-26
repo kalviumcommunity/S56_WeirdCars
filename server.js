@@ -4,6 +4,7 @@ connectToDB()
 const app = express()
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
+const {router} = require("./Route/routes.js")
 
 app.get("/ping",(req,res)=>{
     try{
@@ -22,6 +23,7 @@ app.get("/",(req,res)=>{
         res.sendStatus(404).send(mongooseConnection())
     }
 })
+app.use(router)
 app.listen(port,()=>{
     console.log(`Server running on port: ${port}`)
 })
