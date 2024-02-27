@@ -1,0 +1,31 @@
+.home{
+    /* border: 2px solid black; */
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home h1{
+    font-size: 50px;
+    margin: 10px;
+}
+.home p{
+    font-size: 20px;
+}
+.explore{
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 20px;
+    background-color: #fd744f;
+    color: white;
+    border: none;
+}
+.learn{
+    border: none;
+    background-color: transparent;
+    margin: 0px 20px;
+    font-weight: 700;
+    font-size: 16px;
+}

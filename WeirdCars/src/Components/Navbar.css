@@ -1,0 +1,64 @@
+body{
+    margin: auto;
+    padding: auto;
+}
+nav{
+    /* border: 2px solid black; */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 0  gray;
+}
+img{
+    filter: invert(100%);
+    width: 250px;
+}
+.searchbox{
+    display: flex;
+    align-items: center;
+
+}
+.search{
+    width: 400px;
+    padding: 5px 10px;
+    border-radius: 10px 0px 0px 10px;
+    height: 25px;
+    border: 2px solid black;
+    border-right: none;
+    outline: none;
+}
+.searchbtn{
+    outline: none;
+    height: 37px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 0px 10px 10px 0;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+.login{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.login button{
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+}
+.loginbtn{
+    background-color: transparent;
+    
+}
+.registerbtn{
+    border-radius: 20px;
+    background-color: #fd744f;
+    color: white;
+}
