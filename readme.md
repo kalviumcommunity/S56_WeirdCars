@@ -4,9 +4,13 @@
 
 This is a full-stack project which will show strangest and weirdest cars ever created. Users can explore the collection and contribute their own findings.
 
-## Deployed Link
+## Backend Deployed Link
 
 https://weirdcars.onrender.com
+
+## Frontend Deploy Link
+
+https://s56-weirdcars.netlify.app/
 
 ## Features
 1. **Car Listings**: Browse through a list of weird cars, each with its own dedicated page showcasing images and detailed information.
