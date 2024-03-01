@@ -1,10 +1,24 @@
 const express = require("express")
 const {connectToDB, mongooseConnection} = require("./db.js")
+const mongoose = require("mongoose")
+const UserModel = require("./User.js")
 connectToDB()
 const app = express()
+app.use(express.json())
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
+
+app.get("/getuser",async(req,res)=>{
+    try {
+        const data = await UserModel.find({});
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+})
+
 
 app.get("/ping",(req,res)=>{
     try{
