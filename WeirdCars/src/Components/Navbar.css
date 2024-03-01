@@ -11,7 +11,7 @@ nav{
     justify-content: space-between;
     box-shadow: 0 0 10px 0  gray;
 }
-img{
+.logo img{
     filter: invert(100%);
     width: 250px;
 }
