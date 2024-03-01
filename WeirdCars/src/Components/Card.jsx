@@ -4,16 +4,16 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdShare } from "react-icons/io";
 
 const Card = (props) => {
-  let {name, year, description, feature, image} = props
-// console.log(name)
+  let {Name, Year, Description, Feature, Image} = props.props
+console.log(Image)
   return (
     <div className='card'>
       <div className='details'>
-        <h1>{name}</h1>
+        <h1>{Name}</h1>
         <hr />
-        <h2>Year: {year}</h2>
-        <p>{description}</p>
-        <h3>Weird Feature: {feature}</h3>
+        <h2>Year: {Year}</h2>
+        <p>{Description}</p>
+        <h3>Weird Feature: {Feature}</h3>
         <div className='card-icons'>
         <IoMdHeartEmpty />
         <IoMdShare />
@@ -21,7 +21,7 @@ const Card = (props) => {
       </div>
 
       <div className='Carimg'>
-        <img src="https://www.hagerty.co.uk/wp-content/uploads/2022/03/xoYHC98CnfRAKbhKM58hTKbaSmN4IOx0Dj4HjGx1.jpeg" alt="" />
+        <img src={Image} alt="Car image" />
       </div>
     </div>
   )
