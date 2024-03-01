@@ -1,12 +1,15 @@
 import React from 'react'
 import { IoMdSearch } from "react-icons/io";
+import { Link } from 'react-router-dom';
 import './Navbar.css'
 const Navbar = () => {
   return (
     <div className='navbar'>
         <nav>
             <div className="logo">
+              <Link to="/">
             <img src="../logo.png" alt="" />
+              </Link>
 
             </div>
             <div className="searchbox">

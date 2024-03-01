@@ -1,0 +1,52 @@
+.card{
+    /* border: 2px solid black; */
+    display: flex;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    width: 80vw;
+    margin: auto;
+    box-shadow: 0 0 10px 0 gray;
+    border-radius: 10px;
+
+}
+.card div{
+    /* border: 2px solid blue; */
+}
+.details{
+    width: 60%;
+    height: 300px;
+}
+hr{
+    width: 100px;
+    margin: 20px 0;
+    border: 2px solid rgb(94, 94, 94);
+}
+.details h1{
+    font-weight: 900;
+    margin: auto;
+    font-size: 40px;
+}
+.details p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.Carimg{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Carimg img{
+    width: 400px;
+}
+.card-icons{
+    margin-top: 30px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* border: 2px solid black; */
+    width: fit-content;
+    
+}
