@@ -2,7 +2,7 @@ const express = require("express")
 const {connectToDB, mongooseConnection} = require("./db.js")
 const mongoose = require("mongoose")
 const UserModel = require("./User.js")
-const cors = require("cors")
+const cors = require("7cors")
 connectToDB()
 const app = express()
 app.use(express.json())
@@ -11,7 +11,7 @@ app.use(cors())
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
 
-app.get("/getuser",async(req,res)=>{
+app.get("/getuser",async (req,res)=>{
     try {
         const data = await UserModel.find({});
         res.json(data);
