@@ -13,6 +13,8 @@ const Products = () => {
     axios.get("https://weirdcars.onrender.com/getuser").then((res)=>{
     console.log(res.data)
     setData(res.data)
+    }).catch((err)=>{
+      console.log(err)
     })
   },[])
   return (

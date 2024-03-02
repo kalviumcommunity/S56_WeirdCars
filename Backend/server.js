@@ -1,8 +1,7 @@
 const express = require("express")
 const {connectToDB, mongooseConnection} = require("./db.js")
-const mongoose = require("mongoose")
 const UserModel = require("./User.js")
-const cors = require("7cors")
+const cors = require("cors")
 connectToDB()
 const app = express()
 app.use(express.json())
@@ -15,9 +14,9 @@ app.get("/getuser",async (req,res)=>{
     try {
         const data = await UserModel.find({});
         res.json(data);
-    } catch (error) {
+    } catch (err) {
         console.error(error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: err });
     }
 })
 
