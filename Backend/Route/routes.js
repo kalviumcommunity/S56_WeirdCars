@@ -14,7 +14,7 @@ router.post("/postdata",(req,res)=>{
     }
     // res.json(req.body)
 })
-app.post("/createdata",(res,req)=>{
+router.post("/createdata",(res,req)=>{
     UserModel.create(req.body).then((el)=>res.json(el))
     .catch(err=>res.json(err))
 })
