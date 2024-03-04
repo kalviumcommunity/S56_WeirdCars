@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 router.get("/getdata",(req,res)=>{
 res.json("Get request Success")
 })
