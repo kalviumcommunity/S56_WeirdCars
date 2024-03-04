@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const UserModel = require("../User.js")
 router.get("/getdata",(req,res)=>{
 res.json("Get request Success")
 })
@@ -13,10 +12,6 @@ router.post("/postdata",(req,res)=>{
         res.json({"error":err})
     }
     // res.json(req.body)
-})
-router.post("/createdata",(res,req)=>{
-    UserModel.create(req.body).then((el)=>res.json(el))
-    .catch(err=>res.json(err))
 })
 router.put("/putdata",(req,res)=>{
     try{
