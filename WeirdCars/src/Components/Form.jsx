@@ -13,7 +13,7 @@ const Form = () => {
     let handleSubmit=(el)=>{
         el.preventDefault()
         // console.log(name,year,description,feature,image)
-        axios.post("https://weirdcars.onrender.com/addData",{name,year,description,feature,image})
+        axios.post("https://weirdcars.onrender.com/createdata",{name,year,description,feature,image})
         .then((res)=>{
             console.log(res)
             navigate("/products")

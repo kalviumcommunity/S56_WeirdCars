@@ -20,7 +20,7 @@ app.get("/getuser",async (req,res)=>{
     }
 })
 
-app.post("/addData",(res,req)=>{
+app.post("/createdata",(res,req)=>{
     UserModel.create(req.body).then((el)=>res.json(el))
     .catch(err=>res.json(err))
 })
