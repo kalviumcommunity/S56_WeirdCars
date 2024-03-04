@@ -3,3 +3,14 @@
     padding: 50px 100px;
     
 }
+.addbtn{
+    text-align: center;
+}
+.addbtn button{
+    padding: 10px 15px;
+    border: none;
+    background-color: #fd744f;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+}
