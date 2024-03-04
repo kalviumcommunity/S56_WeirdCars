@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const UserModel = require("./User.js")
+const UserModel = require("../User.js")
 router.get("/getdata",(req,res)=>{
 res.json("Get request Success")
 })
