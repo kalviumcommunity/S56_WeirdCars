@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from "../Components/Navbar"
-import "./FormPage.css"
 import Form from '../Components/Form'
 const FormPage = () => {
   return (

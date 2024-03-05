@@ -5,30 +5,32 @@ const cors = require("cors")
 connectToDB()
 const app = express()
 app.use(express.json())
-app.use(cors())
+
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
+
+app.use(cors())
 
 app.get("/getuser",async (req,res)=>{
     try {
         const data = await UserModel.find({});
         res.json(data);
     } catch (err) {
-        console.error(error);
+        // console.error(error);
         res.status(500).json({ error: err });
     }
 })
 
-app.post("/createdata",(res,req)=>{
-    UserModel.create(req.body).then((el)=>res.json(el))
-    .catch(err=>res.json(err))
-})
+app.post("/createdata",(req, res) => {
+    UserModel.create(req.body).then((el) => res.json(el))
+    .catch(err => res.json(err));
+});
 
 
 app.get("/ping",(req,res)=>{
     try{
-        res.send("pong")    
+        res.send("pong")        
     }
     catch{
         res.sendStatus(404).send("Error 404 not found")
