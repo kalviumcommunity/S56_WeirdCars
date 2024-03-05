@@ -5,11 +5,18 @@ const cors = require("cors")
 connectToDB()
 const app = express()
 app.use(express.json())
-app.use(cors())
+
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
 
+// let opt = {
+//     origin: 'http://localhost:5173',
+//     methods: 'GET,POST,PUT,PATCH,DELETE',
+//     allowedHeaders: 'Content-Type,Authorization',
+//     credentials:true
+// }
+app.use(cors())
 app.get("/getuser",async (req,res)=>{
     try {
         const data = await UserModel.find({});
