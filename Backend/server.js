@@ -10,13 +10,13 @@ app.use(express.json())
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
 
-// let opt = {
-//     origin: 'http://localhost:5173',
-//     methods: 'GET,POST,PUT,PATCH,DELETE',
-//     allowedHeaders: 'Content-Type,Authorization',
-//     credentials:true
-// }
-app.use(cors())
+let opt = {
+    origin: 'https://s56-weirdcars.netlify.app/',
+    methods: 'GET,POST,PUT,PATCH,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+    credentials:true
+}
+app.use(cors(opt))
 app.get("/getuser",async (req,res)=>{
     try {
         const data = await UserModel.find({});
@@ -35,7 +35,7 @@ app.post("/createdata",(res,req)=>{
 
 app.get("/ping",(req,res)=>{
     try{
-        res.send("pong")    
+        res.send("pong")        
     }
     catch{
         res.sendStatus(404).send("Error 404 not found")
