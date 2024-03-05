@@ -3,16 +3,21 @@ const router = express.Router()
 router.get("/getdata",(req,res)=>{
 res.json("Get request Success")
 })
-router.post("/postdata",(req,res)=>{
-    try{
-        res.json("Post request Success")
+// router.post("/postdata",(req,res)=>{
+//     try{
+//         res.json("Post request Success")
 
-    }
-    catch(err){
-        res.json({"error":err})
-    }
-    // res.json(req.body)
-})
+//     }
+//     catch(err){
+//         res.json({"error":err})
+//     }
+//     // res.json(req.body)
+// })
+
+// app.post("/createdata", (req, res) => {
+//     UserModel.create(req.body).then((el) => res.json(el))
+//     .catch(err => res.json(err));
+// });
 router.put("/putdata",(req,res)=>{
     try{
         res.json("Put request success")

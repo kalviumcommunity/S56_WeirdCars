@@ -11,26 +11,27 @@ const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
 
 let opt = {
-    origin: 'https://s56-weirdcars.netlify.app/',
+    origin: 'https://s56-weirdcars.netlify.app',
     methods: 'GET,POST,PUT,PATCH,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
     credentials:true
 }
-app.use(cors(opt))
+app.use(cors())
+
 app.get("/getuser",async (req,res)=>{
     try {
         const data = await UserModel.find({});
         res.json(data);
     } catch (err) {
-        console.error(error);
+        // console.error(error);
         res.status(500).json({ error: err });
     }
 })
 
-app.post("/createdata",(res,req)=>{
-    UserModel.create(req.body).then((el)=>res.json(el))
-    .catch(err=>res.json(err))
-})
+app.post("/createdata",(req, res) => {
+    UserModel.create(req.body).then((el) => res.json(el))
+    .catch(err => res.json(err));
+});
 
 
 app.get("/ping",(req,res)=>{
