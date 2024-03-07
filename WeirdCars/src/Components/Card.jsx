@@ -3,10 +3,21 @@ import "./Card.css"
 // import { IoMdHeartEmpty } from "react-icons/io";
 // import { IoMdShare } from "react-icons/io";
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const Card = (props) => {
   let {name, year, description, feature, image} = props.props
 console.log(Image)
+
+  const handleDelete=(id)=>{
+    axios.delete("/deleteUser/"+id)
+    .then(res=>{
+      window.location.reload()
+      console.log(res)
+  })
+    .catch(err=>console.log(err))
+
+  }
   return (
     <div className='card'>
       <div className='details'>
@@ -20,7 +31,8 @@ console.log(Image)
         <IoMdShare /> */}
         
         <Link to={`/update/${props.props._id}`}><button className='update'>Update</button></Link>
-        <button className='delete'>Delete</button>
+        <button className='delete' onClick={(e)=> handleDelete(props.props._id)}>Delete</button>
+        
         </div>
       </div>
 

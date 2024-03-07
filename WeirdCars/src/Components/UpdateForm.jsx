@@ -28,7 +28,7 @@ const UpdateForm = () => {
             setImage(res.data.image)
         })
         .catch((err)=>console.log(err))
-    })
+    },[])
 
     
     let handleSubmit=(el)=>{
