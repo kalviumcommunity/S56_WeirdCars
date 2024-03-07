@@ -40,7 +40,7 @@ app.post("/createdata",(req, res) => {
     .catch(err => res.json(err));
 });
 
-app.delete("/deleteUser/:id",(req,res)=>{
+app.delete("/deleteuser/:id",(req,res)=>{
     const id= req.params.id;
     UserModel.findByIdAndDelete({_id:id})
     .then(res=>res.json(res))
