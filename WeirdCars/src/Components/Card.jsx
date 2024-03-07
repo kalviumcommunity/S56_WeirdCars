@@ -1,7 +1,5 @@
 import React from 'react'
 import "./Card.css"
-// import { IoMdHeartEmpty } from "react-icons/io";
-// import { IoMdShare } from "react-icons/io";
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -27,8 +25,6 @@ console.log(Image)
         <p>{description}</p>
         <h3>Weird Feature: {feature}</h3>
         <div className='card-icons'>
-        {/* <IoMdHeartEmpty />
-        <IoMdShare /> */}
         
         <Link to={`/update/${props.props._id}`}><button className='update'>Update</button></Link>
         <button className='delete' onClick={(e)=> handleDelete(props.props._id)}>Delete</button>
