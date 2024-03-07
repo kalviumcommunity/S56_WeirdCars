@@ -9,6 +9,7 @@ app.use(express.json())
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
+const { validateEntry } = require("./validator.js")
 
 app.use(cors())
 
@@ -36,6 +37,11 @@ app.put("/updatedata/:id",(req,res)=>{
 })
 
 app.post("/createdata",(req, res) => {
+    const {error,value} = validateEntry(req.body)
+    if(error){
+        console.log(error.details)
+        res.json({error:error.details})
+    }
     UserModel.create(req.body).then((el) => res.json(el))
     .catch(err => res.json(err));
 });
