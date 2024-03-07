@@ -10,4 +10,4 @@ const Schema = Joi.object({
     image:Joi.string().required()
 })
 
-exports.validateEntry = validator(Schema    )
+exports.validateEntry = validator(Schema)

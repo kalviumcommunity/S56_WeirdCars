@@ -41,9 +41,11 @@ app.post("/createdata",(req, res) => {
     if(error){
         console.log(error.details)
         res.json({error:error.details})
+    }else{
+        
+        UserModel.create(req.body).then((el) => res.json(el))
+        .catch(err => res.json(err));
     }
-    UserModel.create(req.body).then((el) => res.json(el))
-    .catch(err => res.json(err));
 });
 
 app.delete("/deleteuser/:id",(req,res)=>{
