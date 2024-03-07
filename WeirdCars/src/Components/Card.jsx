@@ -1,7 +1,8 @@
 import React from 'react'
 import "./Card.css"
-import { IoMdHeartEmpty } from "react-icons/io";
-import { IoMdShare } from "react-icons/io";
+// import { IoMdHeartEmpty } from "react-icons/io";
+// import { IoMdShare } from "react-icons/io";
+import { Link } from 'react-router-dom'
 
 const Card = (props) => {
   let {name, year, description, feature, image} = props.props
@@ -15,8 +16,11 @@ console.log(Image)
         <p>{description}</p>
         <h3>Weird Feature: {feature}</h3>
         <div className='card-icons'>
-        <IoMdHeartEmpty />
-        <IoMdShare />
+        {/* <IoMdHeartEmpty />
+        <IoMdShare /> */}
+        
+        <Link to={`/update/${props.props._id}`}><button className='update'>Update</button></Link>
+        <button className='delete'>Delete</button>
         </div>
       </div>
 

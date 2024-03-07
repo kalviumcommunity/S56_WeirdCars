@@ -21,6 +21,19 @@ app.get("/getuser",async (req,res)=>{
         res.status(500).json({ error: err });
     }
 })
+app.get("/getdata/:id",(req,res)=>{
+    const id= req.params.id;
+    UserModel.findById({_id:id})
+    .then((el) => res.json(el))
+    .catch(err => res.json(err));
+})
+
+app.put("/updatedata/:id",(req,res)=>{
+    const id= req.params.id;
+    UserModel.findByIdAndUpdate({_id:id},{name:req.body.name,year:req.body.year,description:req.body.description,feature:req.body.feature,image:req.body.image})
+    .then((el) => res.json(el))
+    .catch(err => res.json(err));
+})
 
 app.post("/createdata",(req, res) => {
     UserModel.create(req.body).then((el) => res.json(el))
