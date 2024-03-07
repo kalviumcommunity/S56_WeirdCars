@@ -10,7 +10,7 @@ const Card = (props) => {
 console.log(Image)
 
   const handleDelete=(id)=>{
-    axios.delete("/deleteuser/"+id)
+    axios.delete("https://weirdcars.onrender.com/deleteuser/"+id)
     .then(res=>{
       window.location.reload()
       console.log(res)
