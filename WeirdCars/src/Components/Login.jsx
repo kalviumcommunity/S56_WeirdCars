@@ -3,7 +3,7 @@ import "./Login.css"
 import { useNavigate } from 'react-router-dom'
 const Login = () => {
     const [username,setName] = useState()
-    const [password,setYear] = useState()
+    const [password,setPassword] = useState()
     const navigate = useNavigate()
     let handleSubmit=(e)=>{
         e.preventDefault()
@@ -14,7 +14,7 @@ const Login = () => {
     <div className='LoginformContainer'>
     <form action="" onSubmit={handleSubmit}>
         <input type="text" placeholder='Enter UserName' value={username} onChange={(el)=>setName(el.target.value)} />
-        <input type="password" placeholder='Enter Password' value={password} onChange={(el)=>setYear(el.target.value)} />
+        <input type="password" placeholder='Enter Password' value={password} onChange={(el)=>setPassword(el.target.value)} />
         <input type="submit" value="Login" />
     </form>
 </div>
