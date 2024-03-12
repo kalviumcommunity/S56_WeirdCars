@@ -4,8 +4,9 @@ const UserModel = require("./User.js")
 const cors = require("cors")
 connectToDB()
 const app = express()
+require("dotenv").config()
 app.use(express.json())
-
+const jwt = require("jsonwebtoken")
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
@@ -40,14 +41,19 @@ app.post("/createdata",(req, res) => {
     const {error,value} = validateEntry(req.body)
     if(error){
         console.log(error.details)
-        res.json({error:error.details})
+        res.send(error.details)
     }else{
         
         UserModel.create(req.body).then((el) => res.json(el))
         .catch(err => res.json(err));
     }
 });
-
+app.post("/auth",(req,res)=>{
+    let data = req.body
+    var token = jwt.sign({ user: data.username }, process.env.secret);
+    console.log(token)
+    res.send(token)
+})
 app.delete("/deleteuser/:id",(req,res)=>{
     const id= req.params.id;
     UserModel.findByIdAndDelete({_id:id})
