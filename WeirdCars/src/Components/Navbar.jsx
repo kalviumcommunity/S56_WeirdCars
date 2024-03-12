@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css'
 const Navbar = () => {
   let handleLogout=()=>{
-    document.cookie = `username=;expires=`
+    document.cookie = `username=;expires=`+new Date(2010,0,1).toUTCString
     window.location.reload()
   }
   return (
