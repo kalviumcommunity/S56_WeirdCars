@@ -4,6 +4,7 @@ const UserModel = require("./User.js")
 const cors = require("cors")
 connectToDB()
 const app = express()
+require("dotenv").config()
 app.use(express.json())
 const jwt = require("jsonwebtoken")
 // const port = 3000
@@ -49,7 +50,7 @@ app.post("/createdata",(req, res) => {
 });
 app.post("/auth",(req,res)=>{
     let data = req.body
-    var token = jwt.sign({ user: data.username }, 'xyz');
+    var token = jwt.sign({ user: data.username }, process.env.secret);
     console.log(token)
     res.send(token)
 })
