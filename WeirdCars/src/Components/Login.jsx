@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import "./Login.css"
 import { useNavigate } from 'react-router-dom'
+import axios from "axios"
 const Login = () => {
     const [username,setName] = useState()
     const [password,setPassword] = useState()
@@ -8,6 +9,11 @@ const Login = () => {
     let handleSubmit=(e)=>{
         e.preventDefault()
         document.cookie = `username=${username};expires=` +new Date(2030,0,1).toUTCString
+        axios.post("https://weirdcars.onrender.com/auth",{username,password})
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>console.log(err))
         navigate("/")
     }
   return (

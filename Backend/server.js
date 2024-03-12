@@ -5,7 +5,7 @@ const cors = require("cors")
 connectToDB()
 const app = express()
 app.use(express.json())
-
+const jwt = require("jsonwebtoken")
 // const port = 3000
 const port = process.env.PUBLIC_PORT || 3000
 const {router} = require("./Route/routes.js")
@@ -47,7 +47,11 @@ app.post("/createdata",(req, res) => {
         .catch(err => res.json(err));
     }
 });
-
+app.post("/auth",(req,res)=>{
+    let data = req.body
+    var token = jwt.sign({ user: data.username }, 'xyz');
+    console.log(token)
+})
 app.delete("/deleteuser/:id",(req,res)=>{
     const id= req.params.id;
     UserModel.findByIdAndDelete({_id:id})
