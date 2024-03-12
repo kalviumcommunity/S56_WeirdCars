@@ -1,6 +1,6 @@
 const express = require("express")
 const {connectToDB, mongooseConnection} = require("./db.js")
-const UserModel = require("./User.js")
+const {UserModel,UserDetail} = require("./User.js")
 const cors = require("cors")
 connectToDB()
 const app = express()
@@ -22,7 +22,7 @@ app.get("/getuser",async (req,res)=>{
         // console.error(error);
         res.status(500).json({ error: err });
     }
-})
+}) 
 app.get("/getdata/:id",(req,res)=>{
     const id= req.params.id;
     UserModel.findById({_id:id})

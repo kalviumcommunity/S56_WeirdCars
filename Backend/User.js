@@ -7,7 +7,10 @@ const UserSchema = new mongoose.Schema({
     feature: String,
     image:String
 })
+const UserDetails = new mongoose.Schema({
+    username: String
+})
 const Usermodel = mongoose.model("weirdcar-colls", UserSchema)
-
-module.exports = Usermodel
+const UserDetail = mongoose.model("user_details",UserDetails)
+module.exports = {Usermodel,UserDetail}
 

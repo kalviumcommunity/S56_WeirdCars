@@ -6,7 +6,7 @@ const Navbar = () => {
   let handleLogout=()=>{
     document.cookie = `username=;expires=Sun, 01 Jan 1800 00:00:00 GMT`
     document.cookie = `token=; expires=Sun, 01 Jan 1800 00:00:00 GMT `
-    window.location.reload()
+    localStorage.removeItem("currentUser");
   }
   return (
     <div className='navbar'>

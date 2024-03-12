@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import "./Login.css"
 import { useNavigate } from 'react-router-dom'
 import axios from "axios"
@@ -6,6 +6,15 @@ const Login = () => {
     const [username,setName] = useState('')
     const [password,setPassword] = useState('')
     const navigate = useNavigate()
+    const [users,setusers] = useState([])
+    const [userPresence,setuserPresence] = useState(false)
+    useEffect(()=>{
+      axios.get(("https://weirdcars.onrender.com/userinfo")).then((res)=>{
+        // console.log(res.data)
+        setusers(res.data)
+      })
+      .catch((err)=>console.log(err))
+    },[])
     let handleSubmit=(e)=>{
         e.preventDefault()
         document.cookie = `username=${username};expires=` +new Date(2030,0,1).toUTCString
@@ -16,6 +25,21 @@ const Login = () => {
 
         })
         .catch((err)=>console.log(err))
+        users.map((el)=>{
+          if(el.username == username){
+            localStorage.setItem("currentUser",username);
+            setuserPresence(true)
+            return
+          }
+        })
+        if(userPresence == false){
+          localStorage.setItem("currentUser",username)
+          axios.post("https://weirdcars.onrender.com/addUser",{username})
+          .then((res)=>{
+            console.log(res)  
+            setuserPresence(true)
+          })
+        }
         navigate("/")
     }
   return (
