@@ -3,6 +3,10 @@ import { IoMdSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 const Navbar = () => {
+  let handleLogout=()=>{
+    document.cookie = `username=;expires=`+new Date(2010,0,1).toUTCString
+    window.location.reload()
+  }
   return (
     <div className='navbar'>
         <nav>
@@ -17,8 +21,10 @@ const Navbar = () => {
                 <button className='searchbtn'><IoMdSearch /></button>
             </div>
             <div className="login">
+              <Link to="/login">
                 <button className='loginbtn'>Login</button>
-                <button className='registerbtn'>Register</button>
+              </Link>
+                <button className='registerbtn' onClick={handleLogout}>Logout</button>
             </div>
         </nav>
     </div>

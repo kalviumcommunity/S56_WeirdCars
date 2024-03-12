@@ -1,0 +1,30 @@
+.LoginformContainer{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    }
+    
+    form{
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: column;
+        padding: 30px 40px;
+        gap: 10px;
+        box-shadow: 0 0 10px 0 gray;
+        border-radius: 10px;
+    }
+    form input{
+        width: 300px;
+        padding: 10px 15px;
+    }
+    form input[type=submit]{
+        width: 100px;
+        margin: auto;
+        border: none;
+        background-color: #fd744f;
+        color: white;
+        font-weight: 800;
+        border-radius:5px ;
+    }
