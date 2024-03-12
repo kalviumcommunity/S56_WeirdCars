@@ -51,6 +51,7 @@ app.post("/auth",(req,res)=>{
     let data = req.body
     var token = jwt.sign({ user: data.username }, 'xyz');
     console.log(token)
+    res.send(token)
 })
 app.delete("/deleteuser/:id",(req,res)=>{
     const id= req.params.id;
