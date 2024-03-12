@@ -15,7 +15,7 @@ const Form = () => {
         // console.log(name,year,description,feature,image)
         axios.post("https://weirdcars.onrender.com/createdata",{name,year,description,feature,image})
         .then((res)=>{
-            console.log(res)
+            console.log(res.data.error)
             navigate("/products")
         })
         .catch((err)=>console.log(err))

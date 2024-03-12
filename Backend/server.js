@@ -41,7 +41,7 @@ app.post("/createdata",(req, res) => {
     const {error,value} = validateEntry(req.body)
     if(error){
         console.log(error.details)
-        res.json({error:error.details})
+        res.send(error.details)
     }else{
         
         UserModel.create(req.body).then((el) => res.json(el))
