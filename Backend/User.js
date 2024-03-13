@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
 const UserDetails = new mongoose.Schema({
     username: String
 })
-const Usermodel = mongoose.model("weirdcar-colls", UserSchema)
+const UserModel = mongoose.model("weirdcars-colls", UserSchema)
 const UserDetail = mongoose.model("user_details",UserDetails)
-module.exports = {Usermodel,UserDetail}
+module.exports = {UserModel,UserDetail}
 
