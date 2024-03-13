@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Form.css"
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
+import Cookies from "js-cookie"
 const Form = () => {
     const [name,setName] = useState()
     const [year,setYear] = useState()
@@ -9,17 +10,25 @@ const Form = () => {
     const [feature,setFeature] = useState()
     const [image,setImage] = useState()
     const navigate = useNavigate()
+    let createdby = Cookies.get('username')
+    useEffect(()=>{
+        if(createdby == undefined){
+            navigate("/login")
+        }
 
+    },[])
+    
     let handleSubmit=(el)=>{
         el.preventDefault()
         // console.log(name,year,description,feature,image)
-        axios.post("https://weirdcars.onrender.com/createdata",{name,year,description,feature,image})
+        axios.post("https://weirdcars.onrender.com/createdata",{name,year,description,feature,image,createdby })
         .then((res)=>{
             console.log(res.data.error)
             navigate("/products")
         })
         .catch((err)=>console.log(err))
     }
+
   return (
     <div className='formContainer'>
         <form action="" onSubmit={handleSubmit}>

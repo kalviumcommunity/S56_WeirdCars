@@ -50,7 +50,7 @@ app.post("/createdata",(req, res) => {
 });
 app.post("/auth",(req,res)=>{
     let data = req.body
-    var token = jwt.sign({ user: data.username }, process.env.secret);
+    var token = jwt.sign({ user: data }, process.env.secret);
     console.log(token)
     res.send(token)
 })

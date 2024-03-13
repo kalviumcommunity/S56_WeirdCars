@@ -10,10 +10,11 @@ const Products = () => {
   // console.log(data[0])
   const [data,setData] = useState([])
   const [users,setusers] = useState([])
+  const [filtervalue,setfilterValue] = useState('All')
 
   useEffect(()=>{
     axios.get("https://weirdcars.onrender.com/getuser").then((res)=>{
-    // console.log(res.data)
+    console.log(res.data)
     setData(res.data)
     }).catch((err)=>{
       console.log(err)
@@ -25,6 +26,15 @@ const Products = () => {
     })
     .catch((err)=>console.log(err))
   },[])
+
+  let filterData = data.filter((el) => {
+    if(filtervalue =="All"){
+      return el
+    }
+    else{
+      return el.createdby == filtervalue
+    }
+	})
   return (
     <div >
         <Navbar/>
@@ -35,7 +45,7 @@ const Products = () => {
           </div>
           <div className="filterbox">
     <label htmlFor="">Filter:   </label>
-        <select name="Filter" id="Filter" className='Filter'>
+        <select name="Filter" id="Filter" className='Filter' onChange={(e) =>setfilterValue(e.target.value)}>
           <option value="All">All</option>
           {users.map((el,i)=>{
             return <option key={i} value={el.username}>{el.username}</option>
@@ -43,11 +53,18 @@ const Products = () => {
         </select>
           </div>
           {
-            data.map((el,i)=>{
-              return <Card key={i} props={el}/>
-            })
-          }
-
+  filterData.length > 0 ? (
+    <div>
+      {filterData.map((el, i) => {
+        return <Card key={i} props={el} />;
+      })}
+    </div>
+  ) : (
+    <div>
+      No data available.
+    </div>
+  )
+}
         </div>
     </div>
   )
