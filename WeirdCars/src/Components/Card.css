@@ -7,6 +7,7 @@
     margin:40px auto;
     box-shadow: 0 0 10px 0 gray;
     border-radius: 10px;
+    height: fit-content;
 
 }
 .card div{
@@ -14,7 +15,8 @@
 }
 .details{
     width: 60%;
-    height: 300px;
+    /* height: 300px; */
+
 }
 hr{
     width: 100px;

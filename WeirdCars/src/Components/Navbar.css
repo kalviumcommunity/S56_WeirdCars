@@ -52,12 +52,6 @@ nav{
     font-weight: 700;
     font-size: 14px;
     border: none;
-}
-.loginbtn{
-    background-color: transparent;
-    
-}
-.registerbtn{
     border-radius: 20px;
     background-color: #fd744f;
     color: white;

@@ -14,3 +14,20 @@
     font-weight: 700;
     border-radius: 5px;
 }
+.filterbox{
+    /* border: 2px solid black; */
+    padding: 0 50px;
+    text-align:end;
+}
+.Filter{
+    /* border: 2px solid red; */
+    padding: 10px;
+    border-radius: 5px;
+}
+.loadercontainer{
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+}

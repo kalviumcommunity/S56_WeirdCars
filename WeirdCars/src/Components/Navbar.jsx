@@ -2,10 +2,14 @@ import React from 'react'
 import { IoMdSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import Cookies from "js-cookie"
 const Navbar = () => {
+  let username = Cookies.get('username')
+
   let handleLogout=()=>{
     document.cookie = `username=;expires=Sun, 01 Jan 1800 00:00:00 GMT`
     document.cookie = `token=; expires=Sun, 01 Jan 1800 00:00:00 GMT `
+    // localStorage.removeItem("currentUser");
     window.location.reload()
   }
   return (
@@ -22,10 +26,11 @@ const Navbar = () => {
                 <button className='searchbtn'><IoMdSearch /></button>
             </div>
             <div className="login">
-              <Link to="/login">
+              {username==undefined?(<Link to="/login">
                 <button className='loginbtn'>Login</button>
-              </Link>
-                <button className='registerbtn' onClick={handleLogout}>Logout</button>
+              </Link>):(<button className='registerbtn' onClick={handleLogout}>Logout</button>)}
+              
+                
             </div>
         </nav>
     </div>

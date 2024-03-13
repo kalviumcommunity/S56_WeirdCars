@@ -7,7 +7,8 @@ const Schema = Joi.object({
     year:Joi.number().integer().min(1200).max(2024),
     description:Joi.string().required(),
     feature:Joi.string().required(),
-    image:Joi.string().required()
+    image:Joi.string().required(),
+    createdby:Joi.string().required()
 })
 
 exports.validateEntry = validator(Schema)
