@@ -24,3 +24,10 @@
     padding: 10px;
     border-radius: 5px;
 }
+.loadercontainer{
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+}
