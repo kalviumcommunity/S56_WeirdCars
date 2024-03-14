@@ -1,16 +1,19 @@
 import React from 'react'
 import { IoMdSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import Cookies from "js-cookie"
 const Navbar = () => {
   let username = Cookies.get('username')
+  let navigate = useNavigate()
 
   let handleLogout=()=>{
     document.cookie = `username=;expires=Sun, 01 Jan 1800 00:00:00 GMT`
     document.cookie = `token=; expires=Sun, 01 Jan 1800 00:00:00 GMT `
     // localStorage.removeItem("currentUser");
-    window.location.reload()
+    navigate("/")
+    
   }
   return (
     <div className='navbar'>
